@@ -1,0 +1,204 @@
+.bg-gray{
+    background: #F6F6F6;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    padding-top: 32px;
+    padding-bottom: 23px;
+}
+.details-bread-crumbs{
+    background: #fff;
+    padding: 23px 32px 20px;
+    border-radius: 10px 10px 0 0;
+    /*border: 0.5px solid #9C9C9C;*/
+    box-sizing: border-box;
+}
+.details-editing-text{
+    font-size: 14px;
+    font-family: 'Avenir-Medium';
+    color: #9C9C9C;
+}
+.details-editing-text span{
+    color: #E4163A;
+}
+.details-icon-team a{
+    color: #DADADA;
+}
+.details-icon-team a:last-child{
+    color: #E4163A;
+    margin-left: 16px;
+}
+.details-info-team{
+    background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    padding: 65px 0;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.details-info-text{
+    margin-left: 11%;
+}
+.details-info-img{
+    max-width: 210px;
+    width: 100%;
+    max-height: 210px;
+    height: 100%;
+}
+.details-info-inner{
+    display: flex;
+    margin-bottom: 54px;
+}
+.details-info-text h2{
+    font-family: 'Avenir-Black';
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.details-info-text p{
+    font-family: 'Avenir-Black';
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.details-info-text span{
+    font-size: 18px;
+    font-family: 'Avenir-Medium';
+}
+.details-info-left{
+    margin-right: 84px;
+}
+@media screen and (max-width: 1199px) {
+    .bg-gray {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+@media screen and (max-width: 991px) {
+    .bg-gray {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+    .details-info-team{
+        flex-direction: column;
+        text-align: center;
+    }
+    .details-info-text h2{
+        margin-top: 48px;
+    }
+    .details-info-text p{
+        margin-top: 43px;
+    }
+    .details-info-text{
+        margin-left: 0;
+    }
+    .details-info-inner{
+        display: block;
+    }
+    .details-info-left{
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .bg-gray {
+        padding-top: 16px;
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+@media screen and (max-width: 575px) {
+    .bg-gray {
+        padding-top: 16px;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .w-max {
+        padding: 16px 0;
+        box-sizing: border-box;
+    }
+    .details-bread-crumbs {
+        border-radius: 0;
+    }
+    .details-info-team{
+        border-radius: 0;
+    }
+    .details-info-text h2{
+        font-size: 24px;
+    }
+    .details-info-text p{
+        font-size: 18px;
+    }
+    .details-info-text span{
+        font-size: 14px;
+    }
+    .details-info-img{
+        max-width: 140px;
+        max-height: 140px;
+    }
+}
+
+/*--section-roster--*/
+.details-roster{
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 14px 32px;
+    border: 0.5px solid #9C9C9C;
+    box-sizing: border-box;
+}
+.details-roster p{
+    font-size: 18px;
+    color: #707070;
+    font-family: 'Avenir-Medium';
+}
+.details-roster-grid{
+    background: #fff;
+    padding: 0 32px;
+    border: 0.5px solid #9C9C9C;
+    border-top: none;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+.details-roster-player{
+    color: #707070;
+    align-items: center;
+}
+.details-roster-player img{
+    height: 38px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.details-roster-grid span,
+.details-roster-grid p{
+    color: #707070;
+    font-size: 14px;
+    font-family: 'Avenir-Medium';
+    margin: 0;
+}
+.details-roster-player span {
+    color: #9C9C9C;
+    font-size: 12px;
+}
+.details-roster-block{
+    padding: 7px 0;
+
+}
+.details-roster-block::before{
+    content: '';
+    border-top: 1px solid #9C9C9C;
+    width: 100%;
+    left: 0;
+    margin: -8px 0;
+    display: block;
+    position: absolute;
+}
+@media screen and (max-width: 575px) {
+    .details-roster{
+        padding: 14px 16px;
+        border-radius: 0;
+    }
+    .details-roster-grid{
+        padding-left: 16px;
+        padding-right: 16px;
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,39 @@
+.team-card{
+    background: linear-gradient(121.57deg, #707070 1.62%, #393939 81.02%);
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.card-min-box{
+    background: #303030;
+    border-radius: 0px 0px 4px 4px;
+    padding: 24px 0;
+}
+.card-min-box p{
+    font-size: 18px;
+    font-family: 'Avenir-Medium';
+}
+.card-min-box span {
+    font-size: 14px;
+    font-family: 'Avenir-Book';
+}
+.team-image{
+    margin: 15% 0;
+    max-width: 150px;
+    width: 53%;
+}
+@media screen and (max-width: 575px) {
+    .card-min-box p{
+        font-size: 12px;
+    }
+    .card-min-box span{
+        font-size: 10px;
+    }
+    .team-image {
+        width: 35%;
+    }
+    .card-min-box {
+        padding: 18px 0;
+    }
+}

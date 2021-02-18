@@ -1,0 +1,138 @@
+.__select {
+    position: relative;
+    width: 88px;
+    height: 40px;
+    margin-left: auto;
+}
+.__select[data-state="active"] .__select__content {
+    opacity: 1;
+}
+.__select[data-state="active"] .__select__label + .__select__input + .__select__label {
+    max-height: 40px;
+    border-top-width: 1px;
+}
+.__select__title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 88px;
+    height: 40px;
+    padding: 12px 12px 10px 20px;
+    border-radius: 5px;
+    border: solid 0.5px #D1D1D1;
+    cursor: pointer;
+    color: #9C9C9C;
+    font-size: 18px;
+    font-family: 'Avenir-Medium';
+    background: url('https://cdn1.savepice.ru/uploads/2021/1/29/888eacdaa9fc37886738995409167823-full.png') no-repeat;
+    background-position: 58%;
+    margin-left: auto;
+    background-color: #fff;
+}
+.__select__title::before, .__select__title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: block;
+    width: 10px;
+    height: 2px;
+    transition: all 0.3s ease-out;
+    background-color: #9C9C9C;
+    transform: translate(9px, -50%) rotate(45deg);
+}
+.__select__title::after {
+    transform: translate(3px, -50%) rotate(-45deg);
+}
+.__select__content {
+    position: absolute;
+    top: -126px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 88px;
+    color: #9C9C9C;
+    background-color: #ffffff;
+    border: 0.5px solid #D1D1D1;
+    border-top: none;
+    border-radius: 4px;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    z-index: 8;
+}
+.__select__input {
+    display: none;
+}
+.__select__input:hover + label {
+    background-color: #FF768E;
+    transition: all 0.2s ease-out;
+    color: #fff;
+}
+.__select__input:checked + label {
+    background-color: #C60E2E;
+    color: #fff;
+}
+.__select__input:disabled + label {
+    opacity: 0.6;
+    pointer-events: none;
+}
+.__select__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-family: 'Avenir-Medium';
+    max-height: 0;
+    padding: 0 20px;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 18px;
+}
+.__select__label + input + .__select__label {
+    border-top: 0 solid #C7CCD160;
+}
+@media screen and (max-width: 575px) {
+    .__select {
+        display: flex;
+        align-items: center;
+    }
+    .__select__title{
+        font-size: 12px;
+        max-width: 60px;
+        height: 28px;
+        padding: 4px 5px 4px 14px;
+        background: url('https://cdn1.savepice.ru/uploads/2021/1/29/ab5c86474b3e6c6143c85fe2d68240f7-full.png') no-repeat;
+        background-position: 58%;
+        background-color: #fff;
+    }
+    .__select__title::before{
+        top: 50%;
+        right: 14px;
+        width: 7px;
+        transform: translate(7px, -50%) rotate(45deg);
+    }
+    .__select__title::after{
+        top: 50%;
+        right: 14px;
+        width: 7px;
+        transform: translate(3px, -50%) rotate(133deg);
+    }
+    .__select__content{
+        top: -82px;
+        max-width: 60px;
+        right: 0;
+    }
+    .__select__label{
+        font-size: 12px;
+        height: 28px;
+        padding: 0 14px;
+    }
+}
+
+
+/*SELECT-REACT*/
+.css-2b097c-container{
+    max-width: 88px;
+    margin-left: auto;
+}
