@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import imageHeaderLogo from '../../image/header-logo.png';
 import imageHeaderProfile from '../../image/profile.png';
+import {useSelector} from "react-redux";
+import {selectCurrentUser} from "../../store/signInSlice";
 import './Header.css';
 
-const Header = () => {
 
-    // ОТРИСОВАТЬ ОТДЕЛЬНЫМ КОМПОНЕНТОМ АВТОРИЗИРОВАННОГО ПОЛЬЗОВАТЕЛЯ (profile) И ПОДКЛЮЧИТЬ В HEADER
+const Header = () => {
+    const currentUser = useSelector(selectCurrentUser);
 
     const myHandlerBurger = () => {
         // let menu = document.querySelector('.wrapp-menu').style;
@@ -35,7 +37,7 @@ const Header = () => {
                     </div>
                     <div className="d-none d-md-block col-md-6">
                         <a href="#" className="nav-profile d-flex">
-                            <p>John Smith</p>
+                            <p>{currentUser.name}</p>
                             <img src={imageHeaderProfile} className="profile-img" alt="profile" />
                         </a>
                     </div>

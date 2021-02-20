@@ -25,6 +25,9 @@
     font-size: 14px;
     font-family: 'Avenir-Medium';
 }
+.nav-profile:hover{
+    color: #303030;
+}
 .nav-profile p{
     margin: 0;
 }

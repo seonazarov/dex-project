@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import imgGroup from '../../image/Group.png';
-import { useSelector, useDispatch } from 'react-redux';
-import {selectCurrentUser, selectIsAuth} from '../../store/signInSlice';
-import { signInToken } from '../../store/signInSlice';
+import { useDispatch } from 'react-redux';
+import { isUser, authorized, isToken } from '../../store/signInSlice';
+import axios from 'axios';
 import './SignIn.css';
 
 
@@ -14,34 +14,25 @@ type InputsType = {
 };
 
 const SignIn = () => {
+
+    const url = 'http://dev.trainee.dex-it.ru/api/Auth/SignIn';
     const { register, handleSubmit, errors } = useForm<InputsType>();
     const dispatch = useDispatch();
-    const user = useSelector(selectCurrentUser);
-    let isAuth = useSelector(selectIsAuth);
 
-    let url = 'http://dev.trainee.dex-it.ru/api/Auth/SignIn';
     const onSubmit = (data: object) => {
-
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => response.json())
+        axios.post(url, data)
             .then(response => {
 
-                if (!response.token) {
-                    //Тут прописываем логику
-                } else {
-                    localStorage.setItem('token', response.token);
-                    // dispatch(signInToken(response));
-                    // dispatch(user(response));
-                    // dispatch(isAuth(true));
+                if(response.status === 200) {
+                    let token = response.data.token;
+                    localStorage.setItem('Bearer', token);
+                    dispatch(isToken(localStorage.getItem('Bearer')));
+                    dispatch(isUser(response.data));
+                    dispatch(authorized(response.data));
                 }
-            });
+            })
+            .catch(error => console.log(error));
+
     };
 
 
@@ -56,8 +47,8 @@ const SignIn = () => {
                                 <div><label htmlFor="login">Login</label></div>
                                 <div>
                                     <input type="text" name="login"
-                                            ref={register({ required: true, minLength: 2 })}
-                                            id="login" />
+                                           ref={register({ required: true, minLength: 2 })}
+                                           id="login" />
                                     {errors.login && <div><span className="form-wrong">Wrong login. Please, try again.</span></div>}
                                 </div>
                                 <div><label htmlFor="password">Password</label></div>
