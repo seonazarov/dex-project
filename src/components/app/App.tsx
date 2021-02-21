@@ -17,46 +17,32 @@ import './App.css';
 
 const App = () => {
     const isAuth = useSelector(selectIsAuth);
-    let redirectToUrl;
-    if ( !isAuth ) {
-        redirectToUrl = <Redirect to='/sign-in'/>
-    } else if ( isAuth ) {
-        redirectToUrl = <Redirect to='/'/>
-    }
 
 
-  return (
-    <Router>
-        {
-            window.location.pathname !== "/sign-in" &&
-            window.location.pathname !== "/sign-up" ? null : <Header />
-        }
-        <div className="main-wrapper">
-            {
-                window.location.pathname !== '/sign-in' &&
-                window.location.pathname !== '/sign-up' ? null : <PopUp/>
-            }
-            <div className="container-fluid height-100">
-                <div className="row">
-                    {
-                        window.location.pathname !== '/sign-in' &&
-                        window.location.pathname !== '/sign-up' ? null : <SideBar/>
-                    }
-                    {redirectToUrl}
-                    <Switch>
-                        <Route exact path="/" component={Main} />
-                        <Route exact path="/sign-in" component={SignIn} />
-                        <Route exact path="/sign-up" component={SignUp} />
-                        <Route path="/team-card" component={CardTeams} />
-                        <Route path="/adding-team" component={AddingTeam} />
-                        <Route path="/new-team" component={NewTeam} />
-                        <Route path="/details-team" component={DetailsTeam} />
-                    </Switch>
+    return(
+        <Router>
+            {!isAuth ? <Redirect to="/sign-in" /> : <Redirect to="/" />}
+            {isAuth ? <Header /> : null}
+
+            <div className="main-wrapper">
+                {isAuth ? <PopUp /> : null}
+                <div className="container-fluid height-100">
+                    <div className="row">
+                        {isAuth ? <SideBar /> : null}
+                        <Switch>
+                            <Route exact path="/" component={Main} />
+                            <Route exact path="/sign-in" component={SignIn} />
+                            <Route exact path="/sign-up" component={SignUp} />
+                            <Route path="/team-card" component={CardTeams} />
+                            <Route path="/adding-team" component={AddingTeam} />
+                            <Route path="/new-team" component={NewTeam} />
+                            <Route path="/details-team" component={DetailsTeam} />
+                        </Switch>
+                    </div>
                 </div>
             </div>
-        </div>
-    </Router>
-  );
+        </Router>
+    );
 };
 
 export default App;
