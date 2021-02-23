@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import './SelectPagesAmount.css';
 
@@ -15,10 +15,7 @@ const SelectPagesAmount = () => {
         <div className="col-4">
             <div className="pages-amount">
 
-                <Select
-                    options={options}
-
-                />
+                <Select options={options}/>
 
             </div>
         </div>

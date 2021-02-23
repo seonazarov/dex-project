@@ -45,3 +45,13 @@
     padding-right: 0;
     margin: 20px 0;
 }
+
+.active{
+    color: #E4163A;
+}
+.active p{
+    color: #E4163A;
+}
+.active .faUser{
+    color: #E4163A;
+}

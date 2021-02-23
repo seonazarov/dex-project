@@ -1,0 +1,19 @@
+.details-player-text{
+     margin-top: 65px;
+     margin-bottom: 65px;
+     margin-left: 7%;
+ }
+.details-player-text span:first-child{
+    color: #FF5761;
+    font-family: 'Avenir-Black';
+    font-size: 36px;
+}
+.details-player-img{
+    max-width: 460px;
+    width: 100%;
+    margin-top: auto;
+}
+.details-player-team{
+    padding: 0;
+    justify-content: center;
+}

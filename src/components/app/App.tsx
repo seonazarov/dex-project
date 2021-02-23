@@ -12,18 +12,20 @@ import SideBar from "../side-bar/SideBar";
 import AddingTeam from "../adding-team/AddingTeam";
 import NewTeam from "../new-team/NewTeam";
 import DetailsTeam from "../details-team/DetailsTeam";
+import CardPlayers from "../card-players/CardPlayers";
+import DetailsPlayer from "../details-player/DetailsPlayer";
 import './App.css';
+import AddingPlayer from "../adding-player/AddingPlayer";
+import NewPlayer from "../new-player/NewPlayer";
 
 
 const App = () => {
     const isAuth = useSelector(selectIsAuth);
 
-
     return(
         <Router>
             {!isAuth ? <Redirect to="/sign-in" /> : <Redirect to="/" />}
             {isAuth ? <Header /> : null}
-
             <div className="main-wrapper">
                 {isAuth ? <PopUp /> : null}
                 <div className="container-fluid height-100">
@@ -35,8 +37,12 @@ const App = () => {
                             <Route exact path="/sign-up" component={SignUp} />
                             <Route path="/team-card" component={CardTeams} />
                             <Route path="/adding-team" component={AddingTeam} />
+                            <Route path="/adding-player" component={AddingPlayer} />
                             <Route path="/new-team" component={NewTeam} />
+                            <Route path="/new-player" component={NewPlayer} />
                             <Route path="/details-team" component={DetailsTeam} />
+                            <Route path="/card-players" component={CardPlayers} />
+                            <Route path="/details-player" component={DetailsPlayer} />
                         </Switch>
                     </div>
                 </div>

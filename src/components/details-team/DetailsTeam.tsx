@@ -1,10 +1,10 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import DetailsTeamRoster from "./DetailsTeamRoster";
 import imgDenverNuggets from '../../image/Denver-Nuggets.png';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPencilAlt} from "@fortawesome/free-solid-svg-icons";
-import {faTrash} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import './DetailsTeam.css';
 
 
@@ -12,25 +12,21 @@ const DetailsTeam = () => {
     return (
         <div className="col-md-10 col-xl-11 bg-gray">
             <div className="row details-block-border">
-                {/*// <!--bread-crumbs-->*/}
                 <div className="col-12">
                     <div className="details-bread-crumbs d-flex justify-content-between">
                         <div className="details-editing">
                             <div className="details-editing-text"><span>Main</span> / <span>Teams</span> / <span>Denver Nuggets</span></div>
                         </div>
                         <div className="details-icon-team">
-                            <a href="#">
-                                {/*<i className="fas fa-pencil-alt"></i>*/}
+                            <Link to="/">
                                 <FontAwesomeIcon icon={faPencilAlt} />
-                            </a>
-                            <a href="#">
-                                {/*<i className="fas fa-trash"></i>*/}
+                            </Link>
+                            <Link to="/">
                                 <FontAwesomeIcon icon={faTrash} />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
-
                 {/*// <!--section-description-->*/}
                 <div className="col-12">
                     <div className="details-info-team d-flex">
@@ -55,7 +51,6 @@ const DetailsTeam = () => {
                     </div>
                 </div>
             </div>
-
             <DetailsTeamRoster />
         </div>
     );

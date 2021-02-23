@@ -1,10 +1,10 @@
 import React from 'react';
 import imageAddPhoto from '../../image/add_a_photo_24px_rounded.png';
 import { Link } from "react-router-dom";
-import './NewTeam.css';
+import './NewPlayer.css';
 
 
-const NewTeam = () => {
+const NewPlayer = () => {
     return (
         <div className="col-md-10 col-xl-11 bg-gray w-max bg-100-vh">
             <div className="row details-block-border">
@@ -20,8 +20,7 @@ const NewTeam = () => {
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <div className="new-team-add-image">
-                                    <Link to="/" className="new-team-link">
-                                        {/*<input type="file" />*/}
+                                    <Link to="#" className="new-team-link">
                                         <img src={imageAddPhoto} alt="" />
                                     </Link>
                                 </div>
@@ -29,20 +28,36 @@ const NewTeam = () => {
                             <div className="col-12 col-md-6">
                                 <form className="new-team-form">
                                     <div className="new-team-wrapp">
-                                        <label htmlFor="id-team">Team</label>
-                                        <input type="text" id="id-team" />
+                                        <label htmlFor="id-name">Name</label>
+                                        <input type="text" id="id-name" />
                                     </div>
                                     <div className="new-team-wrapp">
-                                        <label htmlFor="id-division">Division</label>
-                                        <input type="text" id="id-division" />
+                                        <label htmlFor="id-position">Position</label>
+                                        <input type="text" id="id-position" />
                                     </div>
                                     <div className="new-team-wrapp">
-                                        <label htmlFor="id-conferense">Conferense</label>
-                                        <input type="text" id="id-conferense" />
+                                        <label htmlFor="id-player-team">Team</label>
+                                        <input type="text" id="id-player-team" />
                                     </div>
-                                    <div className="new-team-wrapp">
-                                        <label htmlFor="id-foundation">Year of foundation</label>
-                                        <input type="number" id="id-foundation" />
+                                    <div className="d-flex justify-content-between form-min-input">
+                                        <div className="new-player-block">
+                                            <label htmlFor="id-player-team">Height</label>
+                                            <input type="text" id="id-height" />
+                                        </div>
+                                        <div className="new-player-block">
+                                            <label htmlFor="id-player-team">Weight</label>
+                                            <input type="text" id="id-weight" />
+                                        </div>
+                                    </div>
+                                    <div className="d-flex justify-content-between form-min-input">
+                                        <div className="new-player-block">
+                                            <label htmlFor="id-player-team">Age</label>
+                                            <input type="text" id="id-age" />
+                                        </div>
+                                        <div className="new-player-block">
+                                            <label htmlFor="id-player-team">Number</label>
+                                            <input type="text" id="id-number" />
+                                        </div>
                                     </div>
                                     <div className="d-flex justify-content-between">
                                         <button className="new-team-btn">Cancel</button>
@@ -58,4 +73,4 @@ const NewTeam = () => {
     );
 };
 
-export default NewTeam;
+export default NewPlayer;

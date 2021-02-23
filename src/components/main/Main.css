@@ -22,6 +22,7 @@
     padding-left: 4rem !important;
     padding-top: 32px;
     padding-bottom: 23px;
+    /*z-index: -1;*/
 }
 
 .search-team-margin {

@@ -23,6 +23,7 @@ const SignIn = () => {
         axios.post(url, data)
             .then(response => {
                 console.log(response);
+
                 if(response.status === 200) {
                     let token = response.data.token;
                     localStorage.setItem('Bearer', token);
@@ -32,7 +33,6 @@ const SignIn = () => {
                 }
             })
             .catch(error => console.log(error));
-
     };
 
 

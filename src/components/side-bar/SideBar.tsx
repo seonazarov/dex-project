@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -20,25 +20,22 @@ const SideBar = () => {
 
     return(
         <div className="d-none d-md-block col-md-2 col-xl-1">
-            <div className="side-bar pop-up text-center">
+            <nav className="side-bar pop-up text-center">
                 <div className="pop-up-top">
-                    <Link to="/" className="pop-up-fa">
-                        <FontAwesomeIcon icon={faUserFriends} />
-                        <Link to="/" className="">Teams</Link>
-                    </Link>
-                    <Link to="/" className="pop-up-bottom">
-                        <FontAwesomeIcon icon={faUser} />
-                        <Link to="/" className="">Players</Link>
-                    </Link>
+                    <NavLink exact to="/" activeClassName="active" className="pop-up-fa">
+                        <FontAwesomeIcon icon={faUserFriends} className="faUser" />
+                        <p>Teams</p>
+                    </NavLink>
+                    <NavLink exact to="/card-players" activeClassName="active" className="pop-up-bottom">
+                        <FontAwesomeIcon icon={faUser} className="faUser"/>
+                        <p>Players</p>
+                    </NavLink>
                 </div>
-                <Link to="/sign-in"
-                      onClick={signOut}
-                      className="pop-up-bottom pop-up-bot"
-                >
+                <NavLink to="/sign-in" onClick={signOut} className="pop-up-bottom pop-up-bot">
                     <FontAwesomeIcon icon={faSignOutAlt} />
-                    <p className="">Sign out</p>
-                </Link>
-            </div>
+                    <p>Sign out</p>
+                </NavLink>
+            </nav>
         </div>
     );
 };

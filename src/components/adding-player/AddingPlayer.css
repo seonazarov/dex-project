@@ -1,0 +1,118 @@
+.bg-gray{
+    background: #F6F6F6;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    padding-top: 32px;
+    padding-bottom: 23px;
+}
+.add-block-teams{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-card-teams{
+    text-align: center;
+    border-radius: 15px;
+    max-width: 556px;
+    height: 658px;
+    background: #fff;
+    padding: 48px 37px;
+    margin: 12% 0;
+}
+.add-card-img{
+    max-width: 482px;
+    width: 100%;
+}
+.add-card-title{
+    color: #FF768E;
+    font-size: 36px;
+    font-family: 'Avenir-Black';
+    margin-top: 48px;
+}
+.add-card-text{
+    color: #707070;
+    font-size: 24px;
+    font-family: 'Avenir-Book';
+    margin: 24px 0 48px;
+}
+.add-card-btn{
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    max-width: 366px;
+    height: 40px;
+    width: 100%;
+    background: #E4163A;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.add-card-players{
+    padding: 48px 100px;
+}
+.add-card-btn:hover{
+    background: #FF5761;
+    transition: 0.2s ease-out;
+    text-decoration: none;
+    color: #fff;
+}
+.add-card-btn:focus{
+    outline: none;
+}
+.add-card-btn:active{
+    background: #C60E2E;
+}
+@media screen and (max-width: 1199px) {
+    .bg-gray {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+@media screen and (max-width: 991px) {
+    .bg-gray {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+@media screen and (max-width: 767px) {
+    .bg-gray {
+        padding-top: 16px;
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+@media screen and (max-width: 575px) {
+    .bg-gray {
+        padding-top: 16px;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .add-card-teams{
+        border-radius: 0;
+        height: 536px;
+        padding: 48px 12px;
+    }
+    .bg-fluid{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .add-card-text{
+        font-size: 18px;
+    }
+    .add-card-title{
+        font-size: 24px;
+    }
+    .add-card-btn{
+        height: 32px;
+    }
+    .add-card-players{
+        width: 100%;
+        padding: 48px 13px;
+        height: auto;
+    }
+    .add-card-players img{
+        max-width: 332px;
+    }
+}

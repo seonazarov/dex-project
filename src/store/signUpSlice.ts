@@ -10,5 +10,5 @@ export const signUpSlice = createSlice({
     }
 });
 
-export const {} = signUpSlice.actions;
+// export const {} = signUpSlice.actions;
 export default signUpSlice.reducer;

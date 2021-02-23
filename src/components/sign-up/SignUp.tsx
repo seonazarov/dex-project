@@ -11,7 +11,7 @@ type InputsRegistrationType = {
 };
 
 const SignUp = () => {
-    const { register, handleSubmit, watch, errors } = useForm<InputsRegistrationType>();
+    const { register, handleSubmit, errors } = useForm<InputsRegistrationType>();
 
     let url = 'http://dev.trainee.dex-it.ru/api/Auth/SignUp';
     const onSubmit = (data: any) => {

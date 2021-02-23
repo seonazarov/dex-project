@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import imageHeaderLogo from '../../image/header-logo.png';
 import imageHeaderProfile from '../../image/profile.png';
-import {useSelector} from "react-redux";
-import {selectCurrentUser} from "../../store/signInSlice";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/signInSlice";
 import './Header.css';
 
 
@@ -25,9 +25,9 @@ const Header = () => {
                 <div className="row">
                     <div className="d-md-none">
                         <div onClick={myHandlerBurger} className="hamburger-menu">
-                            <a href="#" className="menu-btn">
+                            <Link to="/" className="menu-btn">
                                 <span></span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-12 col-md-6">
@@ -36,10 +36,10 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="d-none d-md-block col-md-6">
-                        <a href="#" className="nav-profile d-flex">
+                        <Link to="/" className="nav-profile d-flex">
                             <p>{currentUser.name}</p>
                             <img src={imageHeaderProfile} className="profile-img" alt="profile" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

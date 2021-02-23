@@ -27,6 +27,7 @@
 }
 .nav-profile:hover{
     color: #303030;
+    text-decoration: none;
 }
 .nav-profile p{
     margin: 0;
