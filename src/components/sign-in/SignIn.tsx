@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import imgGroup from '../../image/Group.png';
-import { useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { isUser, authorized, isToken } from '../../store/signInSlice';
 import axios from 'axios';
 import './SignIn.css';
@@ -13,7 +13,24 @@ type InputsType = {
     password: string,
 };
 
-const SignIn = () => {
+interface StateProps {
+    authUser: boolean
+}
+
+type Props = StateProps;
+
+const mapStateToProps = (state: any) => ({
+    authUser: state.isAuth
+});
+
+const mapDispatchToProps = {
+
+};
+
+
+
+const SignIn = (props: Props) => {
+    console.log(props.authUser);
 
     const url = 'http://dev.trainee.dex-it.ru/api/Auth/SignIn';
     const { register, handleSubmit, errors } = useForm<InputsType>();
@@ -77,4 +94,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default connect<StateProps>(mapStateToProps, mapDispatchToProps)(SignIn);

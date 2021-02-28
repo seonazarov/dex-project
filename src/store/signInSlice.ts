@@ -19,14 +19,12 @@ export const signInSlice = createSlice({
             if (data.payload !== {}) state.isAuth = true;
         },
         logOut: (state, data) => {
-
             if (data.payload === false) {
                 state.isAuth = false;
-                state.currentUser = {}
+                state.currentUser = {};
+                state.token = '';
             }
-
         }
-
     }
 });
 

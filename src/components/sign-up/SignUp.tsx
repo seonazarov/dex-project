@@ -1,7 +1,8 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useHistory  } from 'react-router-dom';
 import imgGroup from '../../image/Group2.png';
+import axios from "axios";
 import './SignUp.css';
 
 type InputsRegistrationType = {
@@ -10,22 +11,20 @@ type InputsRegistrationType = {
     password: string,
 };
 
+
 const SignUp = () => {
     const { register, handleSubmit, errors } = useForm<InputsRegistrationType>();
+    let history = useHistory();
 
     let url = 'http://dev.trainee.dex-it.ru/api/Auth/SignUp';
     const onSubmit = (data: any) => {
-        // console.log(data);
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                accept: 'text/plain',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => response.json())
-            .then(response => console.log(response))
+        axios.post(url, data)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => console.log(error));
+
+        history.push('sign-in');
     };
 
     return(

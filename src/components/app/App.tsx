@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useSelector} from "react-redux";
 import { selectIsAuth } from "../../store/signInSlice";
 import SignIn from '../sign-in/SignIn';
 import SignUp from '../sign-up/SignUp';
@@ -14,9 +14,10 @@ import NewTeam from "../new-team/NewTeam";
 import DetailsTeam from "../details-team/DetailsTeam";
 import CardPlayers from "../card-players/CardPlayers";
 import DetailsPlayer from "../details-player/DetailsPlayer";
-import './App.css';
 import AddingPlayer from "../adding-player/AddingPlayer";
 import NewPlayer from "../new-player/NewPlayer";
+import './App.css';
+
 
 
 const App = () => {
