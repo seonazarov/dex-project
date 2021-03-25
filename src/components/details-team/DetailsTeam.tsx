@@ -1,33 +1,41 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import DetailsTeamRoster from "./DetailsTeamRoster";
 import imgDenverNuggets from '../../image/Denver-Nuggets.png';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPencilAlt} from "@fortawesome/free-solid-svg-icons";
+import {faTrash} from "@fortawesome/free-solid-svg-icons";
+import BreadCrumbs from "../bread-crumbs/BreadCrumbs";
 import './DetailsTeam.css';
 
 
 const DetailsTeam = () => {
+    const arrBreadCrumbs:any = [
+        {text: 'Main', link: '/main'},
+        {text: 'Teams', link: '/main'},
+        {text: 'Denver Nuggets', link: '/main/team-card/details-team'},
+    ];
+
+
     return (
         <div className="col-md-10 col-xl-11 bg-gray">
             <div className="row details-block-border">
                 <div className="col-12">
                     <div className="details-bread-crumbs d-flex justify-content-between">
                         <div className="details-editing">
-                            <div className="details-editing-text"><span>Main</span> / <span>Teams</span> / <span>Denver Nuggets</span></div>
+                            <BreadCrumbs
+                                arrBreadCrumbs={arrBreadCrumbs}/>
                         </div>
                         <div className="details-icon-team">
-                            <Link to="/">
+                            <Link to="/main">
                                 <FontAwesomeIcon icon={faPencilAlt} />
                             </Link>
-                            <Link to="/">
+                            <Link to="/main">
                                 <FontAwesomeIcon icon={faTrash} />
                             </Link>
                         </div>
                     </div>
                 </div>
-                {/*// <!--section-description-->*/}
                 <div className="col-12">
                     <div className="details-info-team d-flex">
                         <img src={imgDenverNuggets} className="details-info-img" alt="" />

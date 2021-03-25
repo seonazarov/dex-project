@@ -1,33 +1,82 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, {useEffect, useRef} from 'react';
+import {Link, NavLink, useHistory} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {authorized, logOut, selectCurrentUser} from "../../store/signInSlice";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSignOutAlt, faUser, faUserFriends} from '@fortawesome/free-solid-svg-icons';
+import imageHeaderProfile from '../../image/profile.png';
+import {isPressed} from "../../store/burgerSlise";
 import './PopUp.css';
 
 
-const PopUp = () => {
+interface Props {
+    selBurger: boolean,
+}
+
+const PopUp = ({selBurger}:Props) => {
+    const currentUser = useSelector(selectCurrentUser);
+    const displayBurger = useRef<any>(null);
+    const dispatch = useDispatch();
+    let history = useHistory();
+
+    useEffect(() =>{
+        if(selBurger) {
+            displayBurger.current.classList.add('d-block');
+        }
+    }, []);
+
+    const signOut = () => {
+        dispatch(logOut(false));
+        dispatch(authorized(false));
+        dispatch(isPressed(false));
+        localStorage.clear();
+        history.push("/sign-in");
+    };
+
+    const linkHide = () => {
+        dispatch(isPressed(false));
+    };
+
     return(
-        <div className="wrapp-menu d-md-none">
+        <div className="wrapp-menu d-md-none" ref={displayBurger}>
             <div id="bg_layer"></div>
             <div className="menu__box">
                 <div className="side-bar-top">
-                    <Link to="/" className="nav-profile side-bar-profile d-flex">
-                        <p>John Smith</p>
-                        <img src="./image/profile.png" className="side-bar-img" alt="profile" />
-                    </Link>
+                    <NavLink
+                        to="/main"
+                        className="nav-profile side-bar-profile d-flex"
+                        activeClassName="active">
+                        <p>{currentUser.name}</p>
+                        <img
+                            src={imageHeaderProfile}
+                            className="side-bar-img"
+                            alt="profile" />
+                    </NavLink>
                     <hr/>
                     <div className="side-bar-link">
                         <div className="side-bar-fa">
-                            <i className="fas fa-user-friends" />
-                            <Link to="/" className="">Teams</Link>
+                            <FontAwesomeIcon icon={faUserFriends} />
+                            <NavLink
+                                to="/main"
+                                activeClassName="active"
+                                onClick={linkHide}>
+                                Teams
+                            </NavLink>
                         </div>
                         <div className="side-bar-left">
-                            <i className="fas fa-user" />
-                            <Link to="/" className="">Players</Link>
+                            <FontAwesomeIcon icon={faUser} />
+                            <NavLink
+                                to="/card-players"
+                                onClick={linkHide}
+                                className="">
+                                Players
+                            </NavLink>
                         </div>
                     </div>
                 </div>
                 <div className="side-bar-bottom">
-                    <i className="fas fa-sign-out-alt" />
-                    <Link to="/" className="">Sign out</Link>
+                    <FontAwesomeIcon icon={faSignOutAlt} />
+                    <Link to="/sign-in" onClick={signOut}>Sign out</Link>
                 </div>
             </div>
         </div>

@@ -1,27 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import imgPortland from '../../image/portland.png';
-// import axios from "axios";
 import './CardTeams.css';
 
 
 const CardTeams = () => {
-    // const url = 'http://dev.trainee.dex-it.ru/api/Team/GetTeams';
-
-    // useEffect(() => {
-        // axios.get(url)
-        //     .then(response => {
-        //         console.log(response);
-        //
-        //     })
-        //     .catch(error => console.log(error));
-    // }) ;
-
-
     return (
         <div className="row ">
             <div className="col-6 col-lg-4">
-                <Link to="/details-team">
+                <Link to="/main/team-card/details-team">
                     <div className="team-card">
                         <img src={imgPortland} className="team-image" alt="team" />
                         <div className="card-min-box">

@@ -1,0 +1,17 @@
+.crambs{
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    background-color: transparent !important;
+}
+.details-editing-text{
+    font-size: 14px;
+    font-family: 'Avenir-Medium';
+    color: #9C9C9C;
+}
+.crambs-item{
+    color: #E4163A;
+    font-size: 14px;
+}
+.crambs-item a:last-child{
+    color: #E4163A;
+}

@@ -1,22 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import imageHeaderLogo from '../../image/header-logo.png';
 import imageHeaderProfile from '../../image/profile.png';
-import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../store/signInSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {selectCurrentUser} from "../../store/signInSlice";
+import {isPressed, selectBurger} from "../../store/burgerSlise";
 import './Header.css';
 
 
 const Header = () => {
     const currentUser = useSelector(selectCurrentUser);
+    const selBurger = useSelector(selectBurger);
+    const dispatch = useDispatch();
 
     const myHandlerBurger = () => {
-        // let menu = document.querySelector('.wrapp-menu').style;
-        // if (menu.display === 'none') {
-        //     menu.display = 'block';
-        // } else {
-        //     menu.display = 'none';
-        // }
+        selBurger === false ?
+            dispatch(isPressed(true)) :
+            dispatch(isPressed(false));
     };
 
     return(
@@ -25,18 +25,18 @@ const Header = () => {
                 <div className="row">
                     <div className="d-md-none">
                         <div onClick={myHandlerBurger} className="hamburger-menu">
-                            <Link to="/" className="menu-btn">
+                            <Link to="/main" className="menu-btn">
                                 <span></span>
                             </Link>
                         </div>
                     </div>
                     <div className="col-12 col-md-6">
                         <div className="nav-menu">
-                            <Link to="/"><img src={imageHeaderLogo} className="nav-logo" alt="logo" /></Link>
+                            <Link to="/main"><img src={imageHeaderLogo} className="nav-logo" alt="logo" /></Link>
                         </div>
                     </div>
                     <div className="d-none d-md-block col-md-6">
-                        <Link to="/" className="nav-profile d-flex">
+                        <Link to="/main" className="nav-profile d-flex">
                             <p>{currentUser.name}</p>
                             <img src={imageHeaderProfile} className="profile-img" alt="profile" />
                         </Link>

@@ -1,17 +1,26 @@
 import React from 'react';
 import imageAddPhoto from '../../image/add_a_photo_24px_rounded.png';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import BreadCrumbs from "../bread-crumbs/BreadCrumbs";
 import './NewPlayer.css';
 
 
 const NewPlayer = () => {
+    const arrBreadCrumbs:any = [
+        {text: 'Players', link: '/card-players'},
+        {text: 'Adding Player', link: '/card-players/adding-player'},
+        {text: 'New Player', link: '/card-players/adding-player/new-player'},
+    ];
+
+
     return (
         <div className="col-md-10 col-xl-11 bg-gray w-max bg-100-vh">
             <div className="row details-block-border">
                 <div className="col-12">
                     <div className="details-bread-crumbs d-flex justify-content-between">
                         <div className="details-editing">
-                            <div className="details-editing-text"><span>Main</span> / <span>Players</span> / <span>Greg Whittington</span></div>
+                            <BreadCrumbs
+                                arrBreadCrumbs={arrBreadCrumbs}/>
                         </div>
                     </div>
                 </div>

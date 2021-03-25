@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import './SearchTeam.css';
 
 
@@ -8,11 +8,18 @@ const SearchTeam = () => {
         <div className="row">
             <div className="col-12 col-lg-4">
                 <div className="serch-menu">
-                    <input type="search" placeholder="Search..." className="search-team"/>
+                    <input
+                        type="search"
+                        placeholder="Search..."
+                        className="search-team"/>
                 </div>
             </div>
             <div className="col-12 col-lg-8">
-                <Link to="/adding-team" className="search-btn">Add +</Link>
+                <Link
+                    to="/main/team-card/adding-team"
+                    className="search-btn">
+                    Add +
+                </Link>
             </div>
         </div>
     );

@@ -45,6 +45,10 @@
 /*GAMBURGER*/
 .hamburger-menu{
     position: absolute;
+    z-index: 999999999999999;
+}
+.hamburger-menu a{
+    cursor: pointer;
 }
 .menu-btn {
     display: block;
@@ -81,7 +85,7 @@
 
 
 .menu__box {
-    z-index: 99999;
+    /*z-index: 99999;*/
     position: absolute;
     display: flex;
     flex-direction: column;

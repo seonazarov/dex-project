@@ -1,21 +1,33 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import ReactPaginate from 'react-paginate';
 import './Pagination.css';
 
-const Pagination = () => {
+
+type Props = {
+    selPage: number,
+    selSize: number,
+};
+
+const Pagination = ({selPage, selSize}: Props) => {
+
+    const handlePageClick = () =>{
+
+    };
+
     return(
         <div className="col-8">
             <div className="pages">
-                <FontAwesomeIcon icon={faAngleLeft} />
-                <span className="page-number">1</span>
-                <span className="page-number pages-active">2</span>
-                <span className="page-number">3</span>
-                <span className="page-number">4</span>
-                <span className="page-number">...</span>
-                <span className="page-number">27</span>
-                <FontAwesomeIcon icon={faAngleRight} />
+                <ReactPaginate
+                    previousLabel={'‹'}
+                    nextLabel={'›'}
+                    breakLabel={'...'}
+                    breakClassName={'break-me'}
+                    pageCount={selPage}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={handlePageClick}
+                    containerClassName={'pagination'}
+                    activeClassName={'active'}/>
             </div>
         </div>
     );

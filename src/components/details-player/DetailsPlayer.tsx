@@ -1,26 +1,35 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import {Link} from "react-router-dom";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPencilAlt} from '@fortawesome/free-solid-svg-icons';
+import {faTrash} from '@fortawesome/free-solid-svg-icons';
 import imgPhotoGreg from '../../image/Greg-Whittington.png';
+import Breadcrumbs from '../bread-crumbs/BreadCrumbs';
 import './DetailsPlayer.css';
 
 
 const DetailsPlayer = () =>{
+    const arrBreadCrumbs:any = [
+        {text: 'Main', link: '/main'},
+        {text: 'Players', link: '/card-players'},
+        {text: 'Greg Whittington', link: '/card-players/details-player'},
+    ];
+
+
   return(
       <div className="col-md-10 col-xl-11 bg-gray w-max bg-100-vh">
           <div className="row details-block-border">
               <div className="col-12">
                   <div className="details-bread-crumbs d-flex justify-content-between">
                       <div className="details-editing">
-                          <div className="details-editing-text"><span>Main</span> / <span>Players</span> / <span>Greg Whittington</span></div>
+                          <Breadcrumbs
+                              arrBreadCrumbs={arrBreadCrumbs}/>
                       </div>
                       <div className="details-icon-team">
-                          <Link to="/">
+                          <Link to="/main">
                               <FontAwesomeIcon icon={faPencilAlt} />
                           </Link>
-                          <Link to="/">
+                          <Link to="/main">
                               <FontAwesomeIcon icon={faTrash} />
                           </Link>
                       </div>

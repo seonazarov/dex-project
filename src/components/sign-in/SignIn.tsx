@@ -1,9 +1,9 @@
-import React from 'react';
-import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {useForm} from "react-hook-form";
+import {Link, useHistory} from 'react-router-dom';
 import imgGroup from '../../image/Group.png';
-import { connect, useDispatch } from 'react-redux';
-import { isUser, authorized, isToken } from '../../store/signInSlice';
+import {useDispatch} from 'react-redux';
+import {isUser, authorized, isToken} from '../../store/signInSlice';
 import axios from 'axios';
 import './SignIn.css';
 
@@ -13,28 +13,24 @@ type InputsType = {
     password: string,
 };
 
-interface StateProps {
-    authUser: boolean
-}
 
-type Props = StateProps;
-
-const mapStateToProps = (state: any) => ({
-    authUser: state.isAuth
-});
-
-const mapDispatchToProps = {
-
-};
-
-
-
-const SignIn = (props: Props) => {
-    console.log(props.authUser);
-
+const SignIn = () => {
     const url = 'http://dev.trainee.dex-it.ru/api/Auth/SignIn';
-    const { register, handleSubmit, errors } = useForm<InputsType>();
+    const {register, handleSubmit, errors} = useForm<InputsType>();
     const dispatch = useDispatch();
+    let history = useHistory();
+
+    useEffect(() =>{
+
+        if(localStorage.getItem('Bearer') !== null){
+            history.push('/');
+            dispatch(authorized(true));
+        } else if(localStorage.getItem('Bearer') === null){
+            history.push('/sign-in');
+        }
+
+    }, []);
+
 
     const onSubmit = (data: object) => {
         axios.post(url, data)
@@ -44,9 +40,10 @@ const SignIn = (props: Props) => {
                 if(response.status === 200) {
                     let token = response.data.token;
                     localStorage.setItem('Bearer', token);
+
                     dispatch(isToken(localStorage.getItem('Bearer')));
                     dispatch(isUser(response.data));
-                    dispatch(authorized(response.data));
+                    dispatch(authorized(true));
                 }
             })
             .catch(error => console.log(error));
@@ -94,4 +91,4 @@ const SignIn = (props: Props) => {
     );
 };
 
-export default connect<StateProps>(mapStateToProps, mapDispatchToProps)(SignIn);
+export default SignIn;

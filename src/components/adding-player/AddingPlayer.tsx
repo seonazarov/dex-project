@@ -1,6 +1,6 @@
 import React from 'react';
 import imageAddPlayer from '../../image/add-players.png';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import './AddingPlayer.css';
 
 
@@ -12,7 +12,7 @@ const AddingPlayer = () => {
                 <img src={imageAddPlayer} className="add-card-img" alt="" />
                     <h2 className="add-card-title">Empty here</h2>
                     <p className="add-card-text">Add new players to continue</p>
-                    <Link to="/new-player" className="add-card-btn">Add +</Link>
+                    <Link to="/card-players/adding-player/new-player" className="add-card-btn">Add +</Link>
                 </div>
             </div>
         </div>

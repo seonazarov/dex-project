@@ -13,10 +13,14 @@ export const signInSlice = createSlice({
         },
         isToken: (state, data) => {
             state.token = data.payload;
-            
         },
         authorized: (state, data) => {
-            if (data.payload !== {}) state.isAuth = true;
+            if (data.payload === true ) {
+                state.isAuth = true;
+            } else {
+                state.isAuth = false;
+            }
+            // console.log(data.payload);
         },
         logOut: (state, data) => {
             if (data.payload === false) {
