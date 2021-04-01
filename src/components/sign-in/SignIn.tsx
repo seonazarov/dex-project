@@ -29,14 +29,12 @@ const SignIn = () => {
             history.push('/sign-in');
         }
 
-    }, []);
+    }, [dispatch, history]);
 
 
     const onSubmit = (data: object) => {
         axios.post(url, data)
             .then(response => {
-                console.log(response);
-
                 if(response.status === 200) {
                     let token = response.data.token;
                     localStorage.setItem('Bearer', token);

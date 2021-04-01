@@ -1,133 +1,155 @@
-.wrapp-items{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.wrapp-items {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.section-sign-in{
-    width: 100%;
+
+.section-sign-in {
+  width: 100%;
 }
-.wrapp-search{
-    display: flex;
-    justify-content: space-between;
+
+.wrapp-search {
+  display: flex;
+  justify-content: space-between;
 }
-.form-sign-in{
-    margin-top: 14px;
-    max-width: 366px;
+
+.form-sign-in {
+  margin-top: 14px;
+  max-width: 366px;
 }
-.form-sign-in input{
-    max-width: 366px;
-    width: 100%;
-    height: 40px;
-    border-radius: 4px;
-    background: #F6F6F6;
-    border: none;
-    padding: 7px 11px;
-    outline: none;
-    margin-top: 3px;
+
+.form-sign-in input {
+  max-width: 366px;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  background: #F6F6F6;
+  border: none;
+  padding: 7px 11px;
+  outline: none;
+  margin-top: 3px;
 }
+
 .form-sign-in input:hover {
-    background: #D1D1D1;
-    transition: all 0.2s ease-out;
+  background: #D1D1D1;
+  transition: all 0.2s ease-out;
 }
+
 .form-sign-in input:focus {
-    outline: none;
-    background: #F6F6F6;
-    box-shadow: 0px 0px 5px #D9D9D9;
+  outline: none;
+  background: #F6F6F6;
+  box-shadow: 0px 0px 5px #D9D9D9;
 }
-.form-sign-in input:invalid{
-    background: #F6F6F6;
-    border: 1px solid #FF768E;
-    box-sizing: border-box;
+
+.form-sign-in input:invalid {
+  background: #F6F6F6;
+  border: 1px solid #FF768E;
+  box-sizing: border-box;
 }
-.form-sign-in input:disabled{
-    color: #D1D1D1;
+
+.form-sign-in input:disabled {
+  color: #D1D1D1;
 }
-.form-sign-in label{
-    margin-top: 18px;
-    font-size: 14px;
-    color: #707070;
-    font-family: 'Avenir-Medium';
+
+.form-sign-in label {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #707070;
+  font-family: 'Avenir-Medium';
 }
-.form-btn{
-    max-width: 366px;
-    width: 100%;
-    height: 40px;
-    border-radius: 4px;
-    background: #E4163A;
-    border: none;
-    margin: 22px 0;
-    font-size: 16px;
-    color: #fff;
-    font-family: 'Avenir-Medium';
+
+.form-btn {
+  max-width: 366px;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  background: #E4163A;
+  border: none;
+  margin: 22px 0;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Avenir-Medium';
 }
-.form-registration{
-    text-align: center;
-    font-size: 14px;
-    font-family: 'Avenir-Medium';
-    color: #707070;
+
+.form-registration {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Avenir-Medium';
+  color: #707070;
 }
-.form-color{
-    color: #E4163A;
-    text-decoration: none;
+
+.form-color {
+  color: #E4163A;
+  text-decoration: none;
 }
-.form-color:hover{
-    text-decoration: underline;
-    color: #E4163A;
+
+.form-color:hover {
+  text-decoration: underline;
+  color: #E4163A;
 }
-.form-wrong{
-    font-size: 12px;
-    font-family: 'Avenir-Medium';
-    color: #FF768E;
+
+.form-wrong {
+  font-size: 12px;
+  font-family: 'Avenir-Medium';
+  color: #FF768E;
 }
-#right-fluid{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    padding-right: 5%;
+
+#right-fluid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 5%;
 }
+
 #right-fluid:after {
-    content: "";
-    width: 82%;
-    background: #F5FBFF;
-    position: absolute !important;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index:-999;
+  content: "";
+  width: 82%;
+  background: #F5FBFF;
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -999;
 }
-.content-right-img{
-    max-width: 660px;
-    width: 86%;
-    display: block;
-    margin: 0 auto;
+
+.content-right-img {
+  max-width: 660px;
+  width: 86%;
+  display: block;
+  margin: 0 auto;
 }
-.form-title{
-    font-family: 'Avenir-Book';
-    color: #344472;
-    font-size: 36px;
+
+.form-title {
+  font-family: 'Avenir-Book';
+  color: #344472;
+  font-size: 36px;
 }
-.content-inner{
+
+.content-inner {
+  max-width: 72%;
+  margin-left: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .form-sign-in {
+    margin: 32px auto 0;
+  }
+
+  .form-title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .content-inner {
     max-width: 72%;
     margin-left: auto;
     height: 100%;
     display: flex;
     align-items: center;
-}
-@media screen and (max-width: 767px) {
-    .form-sign-in{
-        margin: 32px auto 0;
-    }
-    .form-title{
-        text-align: center;
-    }
-}
-@media screen and (max-width: 991px) {
-    .content-inner {
-        max-width: 72%;
-        margin-left: auto;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
+  }
 }

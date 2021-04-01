@@ -32,7 +32,7 @@ const Main = () => {
                 }
             })
             .catch(error => console.log(error));
-    }, []) ;
+    }, [dispatch, select]) ;
 
     const selPage = useSelector(selectTeamPage);
     const selSize = useSelector(selectTeamSize);

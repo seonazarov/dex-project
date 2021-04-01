@@ -23,7 +23,7 @@ const PopUp = ({selBurger}:Props) => {
         if(selBurger) {
             displayBurger.current.classList.add('d-block');
         }
-    }, []);
+    }, [selBurger]);
 
     const signOut = () => {
         dispatch(logOut(false));

@@ -20,7 +20,7 @@ const SignUp = () => {
     const onSubmit = (data: any) => {
         axios.post(url, data)
             .then(response => {
-                console.log(response);
+                // console.log(response);
             })
             .catch(error => console.log(error));
 
